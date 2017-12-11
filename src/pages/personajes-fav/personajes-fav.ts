@@ -13,7 +13,7 @@ import { UtilsProvider } from '../../providers/utils/utils';
   selector: 'page-personajes-fav',
   templateUrl: 'personajes-fav.html',
 })
-export class PersonajesPage {
+export class PersonajesFavPage {
   userId;
   listaPersonajes: FirebaseListObservable<any[]>;
 
