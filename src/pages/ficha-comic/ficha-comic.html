@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>{{ comic.title }}</h2>
+
+  <!-- IMAGEN Y DESCRIPCIÓN -->
+  <ion-row>
+    <img class="cover center" src="{{ comic.thumbnail.path }}.{{ comic.thumbnail.extension }}" (click)="mostrarImagen()"> {{ comic.description }}
+  </ion-row>
+
+  <!-- DATOS DE PRODUCCIÓN -->
+  <ion-row>
+    <p>
+      <ion-col col-3 class="center">
+        <span class="center">Publicado: {{ date }}</span>
+      </ion-col>
+      <ion-col col-4 class="center">
+        <span *ngFor="let price of comic.prices">
+          <span class="center" *ngIf="(price.type == 'printPrice') && (price.price > 0)">
+            Precio:
+            <ion-badge class="marvel">{{price.price}} $</ion-badge>
+          </span>
+        </span>
+      </ion-col>
+      <ion-col col-5 class="center">
+        <span class="center" *ngIf="comic.pageCount > 0">
+          Páginas:
+          <ion-badge class="marvel">{{ comic.pageCount }}</ion-badge>
+        </span>
+      </ion-col>
+    </p>
+  </ion-row>
+
+  <!-- CREADORES -->
+  <ion-row *ngIf="comic.creators.items">
+    <h2 class="marvel_text center">Creadores</h2>
+  </ion-row>
+  <ion-row *ngIf="comic.creators.items">
+    <ion-row class="center">
+      <ion-col col-6 *ngFor="let creador of comic.creators.items">
+        <div *ngIf="creador.name != 'various'" class="marvel">{{ creador.name }}</div>
+        <div *ngIf="creador.name == 'various'" class="marvel">Varios artistas</div>
+        <div *ngIf="creador.name != 'various'">({{ creador.role }})</div>
+      </ion-col>
+    </ion-row>
+  </ion-row>
+
+  <!-- PERSONAJES -->
+  <ion-row *ngIf="comic.characters.items">
+    <h2 class="marvel_text center">Personajes</h2>
+  </ion-row>
+  <ion-row *ngIf="comic.characters.items">
+    <ion-row class="center" *ngIf="comic.characters.available > 1">
+      <ion-col col-6 *ngFor="let personaje of comic.characters.items">
+        <div class="marvel" (click)="mostrarPersonaje(personaje.name)">{{ personaje.name }}</div>        
+      </ion-col>
+    </ion-row>
+    <ion-row class="center" *ngIf="comic.characters.available == 1">
+      <div *ngFor="let personaje of comic.characters.items" class="marvel" (click)="mostrarPersonaje(personaje.name)">{{ personaje.name }}</div>
+    </ion-row>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,36 @@
+page-ficha-comic {
+    h1 {
+        text-align: center;
+        color: white;
+        background: black;
+        font-family: 'Marvel', sans-serif;
+    }
+    h2 {
+        text-align: center;
+        color: #9c140d;
+        font-family: 'Marvel', sans-serif;
+    }
+
+    .marvel {
+        background: #9c140d;
+        color: white;
+        padding: 5px;
+    }
+
+    .marvel_text{
+        color: #9c140d;
+    }
+
+    .cover {
+        max-height: 400px;
+    }
+
+    .center {        
+        height: 50%;
+        margin:auto;        
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}

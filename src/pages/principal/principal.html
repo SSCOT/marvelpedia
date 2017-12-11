@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <h1>MARVELPEDIA</h1>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row>
+    <ion-col col-6>
+      <ion-input fixed type="text" hint="character" [(ngModel)]="personaje" placeholder="Personaje"></ion-input>
+    </ion-col>
+    <ion-col col-6>
+      <ion-select [(ngModel)]="anio">
+        <ion-option *ngFor="let num of anios" value="{{num}}">{{ num }}</ion-option>
+      </ion-select>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <button ion-button color="dark" full (click)="obtenerComics()">Obtener</button>
+  </ion-row>
+  <h2 *ngIf="personajeData">{{ personajeData.name }}</h2>
+  <ion-row *ngIf="personajeData">  
+    <img class="cover center" src="{{ personajeData.thumbnail.path }}.{{ personajeData.thumbnail.extension }}" (click)="mostrarImagen()">
+    <button *ngIf="personajeData.favorito" ion-button full (click)="anadirFavorito(personajeData.instanciaPersonaje)">Añadir a lista de favoritos</button>    
+    <p *ngIf="personajeData.description">{{personajeData.description}}</p>
+  </ion-row>
+  <ion-list ng-if="comics">
+    <ion-item-sliding *ngFor="let comic of comics" (click)="obtenerFichaComic(comic.id)">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="{{ comic.thumbnail.path }}.{{ comic.thumbnail.extension }}">
+        </ion-thumbnail>
+        <span class="marvel_text">{{ comic.title }}</span>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button (click)="obtenerFichaComic(comic.id)" class="marvel">
+          <ion-icon name="search"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

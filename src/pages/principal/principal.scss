@@ -1,0 +1,76 @@
+page-principal {
+    ion-title{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background: #9c140d;
+        color: white;
+    }
+
+    button {
+        text-align: center;
+        background: #9c140d;
+        color: white;
+        font-family: 'Marvel', sans-serif;
+    }
+
+    h1 {        
+        text-align: center;
+        color: white;
+        font-family: 'Marvel', sans-serif;
+    }
+
+    h2 {
+        text-align: center;
+        color: #9c140d;
+        font-family: 'Marvel', sans-serif;
+    }
+
+    .amarillo{
+        background: #ffbf00
+    }
+
+    .negro {
+        color: black;
+    }
+
+    .nombre {      
+        font-family: 'Marvel', sans-serif;       
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background: #9c140d;
+        color: white;
+    }
+
+    .marvel {    
+        background: #9c140d;
+        color: white;
+    }
+
+    .marvel_text{
+        color: #9c140d;
+    }
+
+    .cover {
+        max-height: 200px;
+    }
+
+    .center {        
+        height: 50%;
+        margin:auto;        
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .btnInterior {
+        position: absolute;        
+    }
+}

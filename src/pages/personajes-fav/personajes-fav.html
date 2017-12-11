@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><h1>Personajes favoritos</h1></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>  
+  <ion-list ng-if="listaPersonajes">
+    <ion-item-sliding *ngFor="let personaje of listaPersonajes | async">        
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="{{ personaje.imagen }}">
+        </ion-thumbnail>
+        <span class="marvel_text">{{ personaje.nombre }}</span>
+      </ion-item>
+      <ion-item-options side="right">
+          <button ion-button (click)="mostrarPersonaje(personaje.nombre)" color="primary">
+              <ion-icon name="search"></ion-icon>
+            </button>
+        <button ion-button (click)="borrarFavorito(personaje.$key)" class="marvel">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

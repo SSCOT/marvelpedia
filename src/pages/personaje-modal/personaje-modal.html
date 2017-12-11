@@ -1,0 +1,4 @@
+<ion-content padding (click)="dismiss()">
+  <img *ngIf="personajeData" src="{{ personajeData.thumbnail.path }}.{{ personajeData.thumbnail.extension }}" >
+  <p *ngIf="personajeData">{{ personajeData.description }}</p>
+</ion-content>

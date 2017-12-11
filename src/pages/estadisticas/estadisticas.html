@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><h1>Estadísticas</h1></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row>
+    <ion-col col-6 class="center">
+      <ion-input class="center" fixed type="text" hint="character" [(ngModel)]="personajeNombre" placeholder="Personaje A"></ion-input>
+    </ion-col>
+    <ion-col col-6 class="center">
+      <ion-input class="center" fixed type="text" hint="character" [(ngModel)]="personajeNombre2" placeholder="Personaje B"></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-item>
+    <ion-label>Década de {{ decada }}</ion-label>>
+    <ion-range min="1940" max="2010" step="10" snaps="true" pin="true" color="primary" [(ngModel)]="decada"></ion-range>
+  </ion-item>
+  <ion-row>
+    <button ion-button color="dark" full (click)="lanzarGrafica()">Obtener</button>
+  </ion-row>
+  <ion-item>
+    <canvas #barCanvasTotales class="canvas"></canvas>
+  </ion-item>
+  <ion-item>
+    <canvas #barCanvas class="canvas"></canvas>
+  </ion-item>
+</ion-content>

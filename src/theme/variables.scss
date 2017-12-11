@@ -34,7 +34,7 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
+  primary:    #9c140d,//#488aff,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
@@ -53,7 +53,13 @@ $colors: (
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
+$tab-button-md-active-color:              #9c140d;
+$tab-button-md-inactive-color:            #9c140d;
 
+// Change the color of the segment button text
+$toolbar-md-active-color:                 #000;
+$toolbar-md-inactive-color:               #555;
+$segment-button-md-text-color-activated:  #111;
 
 
 // App Windows Variables
@@ -86,3 +92,17 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+
+// TOAST
+.toast-container{
+  background-color: #9c140d;
+  color: white;
+  text-align: center;
+}
+
+/* ionic-tab{
+  background: #9c140d;
+  color: #9c140d;
+} */
+
