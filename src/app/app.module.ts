@@ -10,7 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { PrincipalPage } from '../pages/principal/principal';
-import { PersonajesFavPage } from '../pages/personajes-fav/personajes-fav';
+import { PersonajesPage } from '../pages/personajes-fav/personajes-fav';
 import { FichaComicPage } from '../pages/ficha-comic/ficha-comic';
 import { ImagenModalPage } from '../pages/imagen-modal/imagen-modal';
 import { LoginPage } from '../pages/login/login';
@@ -46,7 +46,7 @@ const fbConf = {
     MyApp,    
     PrincipalPage,
     EstadisticasPage,
-    PersonajesFavPage,    
+    PersonajesPage,    
     FichaComicPage,
     ImagenModalPage,
     PersonajeModalPage,
@@ -65,7 +65,7 @@ const fbConf = {
   entryComponents: [
     MyApp,
     PrincipalPage,
-    PersonajesFavPage,
+    PersonajesPage,
     EstadisticasPage,
     FichaComicPage,
     ImagenModalPage,

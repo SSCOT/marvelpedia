@@ -13,9 +13,9 @@ import { UtilsProvider } from '../../providers/utils/utils';
   selector: 'page-personajes-fav',
   templateUrl: 'personajes-fav.html',
 })
-export class PersonajesFavPage {
+export class PersonajesPage {
   userId;
-  //listaPersonajes: FirebaseListObservable<any[]>;
+  listaPersonajes: FirebaseListObservable<any[]>;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -26,7 +26,7 @@ export class PersonajesFavPage {
 
     // Obtenemos los datos del usuario y la lista de favoritos
     this.userId = this.afAuth.auth.currentUser.uid;
-    //this.listaPersonajes = this.db.list("/" + this.userId);
+    this.listaPersonajes = this.db.list("/" + this.userId);
   }
 
   borrarFavorito(psj) {
