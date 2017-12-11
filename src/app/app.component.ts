@@ -17,7 +17,7 @@ export class MyApp {
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, afAuth: AngularFireAuth) {
 
     // Comprobamos que el usuario está logeado. Si lo está nos vamos a la página principal, si no a la de login
-    const authObserver = afAuth.authState.subscribe(user => {
+    /* const authObserver = afAuth.authState.subscribe(user => {
       if (user) {
         this.rootPage = TabsPage;
         authObserver.unsubscribe();
@@ -25,7 +25,7 @@ export class MyApp {
         this.rootPage = LoginPage;
         authObserver.unsubscribe();
       }
-    });
+    }); */
 
     platform.ready().then(() => {      
       statusBar.styleDefault();
